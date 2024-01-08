@@ -45,7 +45,7 @@ begin
               end
             else if (f[x,y] = 8) or (f[x,y] = 16) then
               begin
-                SetTextColor(_WHITE);
+                SetTextColor(_BLUE);
                 SetTextBg(_YELLOW);
               end
             else if (f[x,y] = 32) or (f[x,y] = 64) then

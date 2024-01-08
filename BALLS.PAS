@@ -5,7 +5,7 @@ type str2=string[2];
 const FSM=15;
   FSC=225;
 {$I ANSICOLR.INC}
-  
+
 var x,y,i,fs,mc,pl,z:byte;
   f:array[1..FSM,1..FSM] of byte;
   c:char;
@@ -86,20 +86,22 @@ begin
   if fl>0 then begin
     f[x,y]:=f[x,y] or fl;
     chks('()',fl);
-	chks('{}',fl);
+    chks('{}',fl);
     chks('()',fl);
     chks('<>',fl);
     chks('::',fl);
     chks('..',fl);
     SetTextColor(_WHITE);
-    chks('##',fl);
+    chks('  ',fl);
     i:=0;
     for x:=1 to FS do for y:=1 to FS do if (f[x,y] and fl)>0 then begin
       f[x,y]:=0;i:=i+1;
       updb(x,y);
     end;
     sc:=sc+i;
-    gotoxy(FS*3+10+7,3); SetTextColor(_WHITE); write(sc);
+    gotoxy(FS*3+10+7,3);
+    SetTextColor(_WHITE); SetTextBg(_BLUE); write(sc);
+    SetTextBg(_WHITE);
     chk:=false;
   end;
   for x:=1 to FS do for y:=1 to FS do f[x,y]:=f[x,y] and 7;
@@ -148,7 +150,7 @@ begin
   begin
     SetTextColor(_BLACK);
     SetTextBg(_WHITE);
-    write(' ## ');
+    write('    ');
     SetTextBg(_WHITE);
   end
   else
@@ -218,7 +220,7 @@ begin
     f[x,y]:=0;
     SetTextColor(_BLACK);
     SetTextBg(_WHITE);
-    drwb(x,y,'## ');
+    drwb(x,y,'   ');
     SetTextBg(_WHITE);
     updb(x,y);
     unmark;
@@ -254,8 +256,8 @@ begin
   clrscr;
   SetTextColor(_WHITE);
   writeln('CRISS CP/M CLR. Balls game');
-  fs:=9; mc:=5; pl:=5;
   terminal:=1;
+  fs:=9; mc:=5; pl:=5;
   writeln('Field ',fs,'x',fs,', ',mc,' Colors, ',pl,' Per line');
   writeln('Press S to change settings, any key to start or ESC to cancel');
   case readkey of
@@ -284,7 +286,7 @@ begin
   for y:=1 to FS do begin
     write(' |');
     write(' ');
-    for x:=1 to FS do write('## ');
+    for x:=1 to FS do write('   ');
     writeln('|');
   end;
   write(' +-'); for x:=1 to FS do write('---'); writeln('+');
@@ -345,7 +347,7 @@ begin
   SetTextBg(_BLACK);
   gotoxy(1,FS+6);
   writeln('Exit to CP/M. Press any key.');
-  readkey;
+  c:=readkey;
   clrscr;
   SetTextColor(_WHITE);
 end.
