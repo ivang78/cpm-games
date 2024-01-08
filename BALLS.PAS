@@ -324,10 +324,10 @@ begin
     until keypressed;
     c:=upcase(readkey);
     case c of
-      'Q': mv(0,-1);
-      'A': mv(0,1);
-      'O': mv(-1,0);
-      'P': mv(1,0);
+      'W': mv(0,-1);
+      'S': mv(0,1);
+      'A': mv(-1,0);
+      'D': mv(1,0);
       ' ',#13: if bs then begin
               bs:=false; unmark;
               if chk(x,y) then add3; {updf;}
