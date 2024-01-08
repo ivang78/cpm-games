@@ -13,7 +13,7 @@ var x,y,i,fs,mc,pl,z:byte;
   sc,m:integer;
   terminal:byte;
 
-{$I DOS.INC}
+{$I CPM.INC}
 
 procedure SetColor(b1:byte);
 begin
