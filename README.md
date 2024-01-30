@@ -31,6 +31,8 @@ Adaptation of [brick-style CP/M game](https://github.com/marcosretrobits/EVAS10N
 
 Adaptation of 2048 game written for [CRISS CP/M computer](http://criss.radio.ru) to ANSI color terminal.
 
+![](2048.jpg)
+
 ## BALLS
 
 Adaptation of color balls game written for [CRISS CP/M computer](http://criss.radio.ru) to ANSI color terminal.
